@@ -29,6 +29,22 @@ import { store } from "./modules/store/store";
 
 ```
 
+### Extension
+
+Recomiendo instalar redux developer tools [Extension](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=es)
+
+## Tailwind
+[Documentación Tailwind](https://tailwindcss.com/docs/guides/create-react-app)
+
+```bash
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
+
+tailwind.config.js es la configuracion general para usar estilos y configuraciones
+
+`App.css` se tiene que agregar las importaciones de sus estilos
+
 ## Threejs
 
 
