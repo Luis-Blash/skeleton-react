@@ -1,46 +1,56 @@
-import * as THREE from "three";
+import { Scene, BoxBufferGeometry, MeshBasicMaterial, Mesh, PerspectiveCamera, WebGLRenderer, Raycaster, Vector2 } from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 export class AppThree {
   constructor(container) {
     this.container = container;
-    this.scene = new THREE.Scene();
-    //add Camera
-    this.camera = new THREE.PerspectiveCamera(
+    this.scene = new Scene();
+    this.camera = new PerspectiveCamera(
       75,
-      container.clientWidth / container.clientHeight,
+      this.container.clientWidth / this.container.clientHeight,
       0.1,
       1000
     );
-    this.camera.position.set(0, 0, 15);
-    //Add Renderer
-    this.renderer = new THREE.WebGLRenderer();
-    this.renderer.setPixelRatio(window.devicePixelRatio);
-    this.renderer.setSize(container.clientWidth, container.clientHeight);
+    this.renderer = new WebGLRenderer({ alpha: false });
+    this.renderer.setSize(
+      this.container.clientWidth,
+      this.container.clientHeight
+    );
+    this.container.appendChild(this.renderer.domElement);
+  }
 
-    this.camera.position.z = 8;
-    this.camera.position.y = 5;
+  controlls() {
+    const controls = new OrbitControls(this.camera, this.renderer.domElement);
+    controls.enableZoom = false;
+  }
+
+  camaraSceene(x, y, z) {
+    this.camera.position.set(x, y, z);
   }
 
   addScene(object) {
     this.scene.add(object);
   }
 
-  render() {
+  renderScene() {
     this.renderer.render(this.scene, this.camera);
   }
 
+  cleenScene() {
+    this.container.parentElement.removeChild(this.container);
+    this.renderer.dispose();
+  }
+
   createCube() {
-    const geometry = new THREE.BoxBufferGeometry(1, 1, 1); // que es mejor dado que guarda cache
-    const material = new THREE.MeshBasicMaterial({
+    const geometry = new BoxBufferGeometry(1, 1, 1); // que es mejor dado que guarda cache
+    const material = new MeshBasicMaterial({
       color: "teal",
     });
-    const cube = new THREE.Mesh(geometry, material);
+    const cube = new Mesh(geometry, material);
     return cube;
   }
 
   animate() {
-    requestAnimationFrame(this.animate());
-    this.render()
+    this.renderScene();
   }
 }

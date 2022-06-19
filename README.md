@@ -1,4 +1,7 @@
 # Skeleton React
+
+Creado con node v16.14.0
+
 ## Inicializar
 [Documentación react](https://create-react-app.dev/docs/getting-started)
 
