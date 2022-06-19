@@ -46,6 +46,14 @@ tailwind.config.js es la configuracion general para usar estilos y configuracion
 `App.css` se tiene que agregar las importaciones de sus estilos
 
 ## Threejs
+[NPM threejs](https://www.npmjs.com/package/three)
+
+```bash
+npm i three
+```
+
+
+
 
 
 ## Correr proyecto

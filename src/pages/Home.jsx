@@ -1,7 +1,10 @@
-import React from 'react'
+import React from "react";
+import { Threejs } from "../components/Threejs";
 
 export const Home = () => {
   return (
-    <div className='bg-red-500'>Home</div>
-  )
-}
+    <>
+      <Threejs />
+    </>
+  );
+};
