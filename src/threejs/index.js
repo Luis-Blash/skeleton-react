@@ -1,4 +1,11 @@
-import { Scene, BoxBufferGeometry, MeshBasicMaterial, Mesh, PerspectiveCamera, WebGLRenderer, Raycaster, Vector2 } from "three";
+import {
+  Scene,
+  MeshBasicMaterial,
+  Mesh,
+  PerspectiveCamera,
+  WebGLRenderer,
+  BoxGeometry,
+} from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 export class AppThree {
@@ -42,10 +49,8 @@ export class AppThree {
   }
 
   createCube() {
-    const geometry = new BoxBufferGeometry(1, 1, 1); // que es mejor dado que guarda cache
-    const material = new MeshBasicMaterial({
-      color: "teal",
-    });
+    const geometry = new BoxGeometry();
+    const material = new MeshBasicMaterial({ color: "#47E0C2" });
     const cube = new Mesh(geometry, material);
     return cube;
   }
