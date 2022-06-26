@@ -45,8 +45,10 @@ tailwind.config.js es la configuracion general para usar estilos y configuracion
 
 `App.css` se tiene que agregar las importaciones de sus estilos
 
-## Threejs
+## Router
+[Documentación React router dom 6](https://reactrouter.com/docs/en/v6/getting-started/overview)
 
+El enrutador de react se encuentra en en la carpeta `src/router`, en el archivo `types.js` se encuentra el path de rutas que se usa en la aplicación, en `AppRouter.jsx` se encuentra el enrutador global de la aplicación de ahi se decide a que partes se puede redirigir, para mas información en el `README.md` de su funcionamiento
 
 ## Correr proyecto
 
