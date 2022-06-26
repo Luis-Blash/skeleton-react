@@ -1,5 +1,9 @@
 export const PathRoot = {
     root: '/',
-    public: 'public/*',
+    auth: 'auth/*',
     notfound: '*',
+}
+
+export const AuthRoot = {
+    reset: 'reset'
 }
